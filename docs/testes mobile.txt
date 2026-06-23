@@ -1,0 +1,55 @@
+Testes Mobile
+
+Existem vários tipos de aplciativos (apps)
+-Celulares/Smartphone: Android/ Iphone <-- Foco no Android
+-Tablets: Android/Iphone
+-SmarTv
+-Wearable(vestíveis): smartbands(pulseiras), smartwatches(relogios), smartglasses(oculos)
+-Eletro/eletronicos
+-Sistemas de mídia automovel
+
+Pré-requisitos
+Cenário 01- Testes locais
+-SDK (Kit de comunicação/desenvolvimento) --> existe um para cada versao do sistema operacional
+-Emulador --> Android Studio
+-Appium Service/Server/Desktop
+{
+  "platformName": "Android",
+  "appium:platformVersion": "13.0",
+  "appium:deviceName": "emulator5554",
+  "appium:deviceOrientation": "portrait",
+  "appium:appPackage": "com.saucelabs.mydemoapp.android",
+  "appium:appActivity": "com.saucelabs.mydemoapp.android.view.activities.SplashActivity",
+  "appium:automationName": "UiAutomator2",
+  "browserName": "",
+  "appium:ensureWebviewsHavePages": "true"
+}
+
+
+Cenário 02- Testes remotos
+-Conta em um serviço(SauceLabs, Browserstack, Perfecto)
+
+
+Comuns aos dois cenários:
+-APK do app alvo( instalador do app que queremos testar)
+-APK Info (descobrir appPackage e o appActivity)
+-Appium Inspector
+
+Maquina Ideal
+- Processador I5, I7 ou I9 ou equivalente AMD - Familias 12 em diante
+-GPU (placa de vídeo)- não ter uma placa de video offline
+-Memoria RAM: 16GB, 32GB ou mais
+-Disco: SSD pelo menos 512 GB 
+
+Através do APK Info, vamos descobrir 2 informações sobre o App alvo:
+- appPackage:  com.saucelabs.mydemoapp.android
+- appActivity: com.saucelabs.mydemoapp.android.view.activities.SplashActivity
+
+%ANDROID_SDK_ROOT%
+ 
+%ANDROID_SDK_ROOT%\platform-tools
+ 
+%ANDROID_SDK_ROOT%\emulator
+ 
+%ANDROID_SDK_ROOT%\cmdline-tools
+ 
