@@ -4,7 +4,7 @@ Scenario Outline: Comprar produto com sucesso
 Given que abro o MyDemoApp
 When seleciono o produto na "<posicao>"
 Then exibe a pagina de detalhe com o "<nome_produto>"
-And e o "<preco_produto>"
+And o "<preco_produto>"
 
 
 
