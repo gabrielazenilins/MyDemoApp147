@@ -24,8 +24,8 @@ async function main () {
   "unhandledPromptBehavior": "ignore"
 }
   const driver = await remote({
-    user: process.env.SAUCEUSER,
-    key: process.env.SAUCEKEY,
+    user: process.env.SAUCE_USER,
+    key: process.env.SAUCE_KEY,
     protocol: "https",
     hostname: "ondemand.us-west-1.saucelabs.com",
     port: 443,
