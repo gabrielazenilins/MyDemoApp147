@@ -146,7 +146,7 @@ exports.config = {
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
        require: [
-            "./features/step-definitions/mda/steps.js",
+            "./features/step-definitions/mda/steps_po.js",
             "./features/step-definitions/mda/hooks.js",
         ],
         // <boolean> show full backtrace for errors

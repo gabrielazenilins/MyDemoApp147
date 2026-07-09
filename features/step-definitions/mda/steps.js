@@ -1,20 +1,14 @@
-import { Given, Then, When, Before, After } from "@wdio/cucumber-framework";
+//Steps do cucumber
+import { Given, Then, When } from "@wdio/cucumber-framework";
  
-Before(async () => {
-  await driver.activateApp("com.saucelabs.mydemoapp.android");
-});
- 
-After(async () => {
-  await driver.terminateApp("com.saucelabs.mydemoapp.android");
-});
- 
+
 
 Given ('que abro o MyDemoApp', async () => {
 
 const img_produto = await driver.$("-android uiautomator:new UiSelector().resourceId(\"com.saucelabs.mydemoapp.android:id/productIV\").instance(0)",
 
 ); 
-await expect (img_produto).toBeDisplayed();
+await expect (await img_produto).toBeDisplayed();
 });
 When ('seleciono o produto na {string}', async (posicao)=> {
 
@@ -42,5 +36,5 @@ Then ('o {string}', async (preco_produto)=> {
     const lbl_preco_produto = await driver.$("id:com.saucelabs.mydemoapp.android:id/priceTV",
     );
     await expect(await lbl_preco_produto.getText()).toEqual(preco_produto); 
-      await driver.terminateApp("com.saucelabs.mydemoapp.android");
+      
 });
