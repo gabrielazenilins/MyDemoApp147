@@ -9,7 +9,9 @@
     "test": "tests"
   },
   "scripts": {
-        
+    
+    "wdio": "wdio run ./wdio.conf.js",
+    "wdio-sauce": "wdio run ./wdio.sauce.conf.js",
     "wdio-sauce-po": "wdio run ./wdio.sauce.po.conf.js"
   },
 
