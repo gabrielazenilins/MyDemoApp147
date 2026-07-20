@@ -1,13 +1,25 @@
 export class BasePage {
-    async arrastaParaCima(){
+    async roloAteElemento(resourceId, instance = 0) {
+        const seletor = `-android uiautomator:new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().resourceId("${resourceId}").instance(${instance}))`;
+        const elemento = driver.$(seletor);
+        await elemento.waitForDisplayed({ timeout: 15000 });
+        return elemento;
+    }
 
-    await driver.action('pointer')
-    .move({ duration: 0, x: 601, y: 1948 })
-    .down({ button: 0 }) 
-    .move({ duration: 1000, x: 623, y: 847 })
-    .up({ button: 0 }) 
- 
-    .perform(); 
-}
-}
+    async abroMenu(){
+        const btn_menu = driver.$("id:com.saucelabs.mydemoapp.android:id/menuIV");
+        await btn_menu.click();
+    }
 
+    async clicoItemMenu(texto){
+        const item_menu = driver.$(
+            `-android uiautomator:new UiSelector().text("${texto}")`
+        );
+        await item_menu.click();
+    }
+
+    async voltoParaCatalogo(){
+        await this.abroMenu();
+        await this.clicoItemMenu("Catalog");
+    }
+}
